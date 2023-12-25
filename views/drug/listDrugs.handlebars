@@ -1,0 +1,349 @@
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.bold-column td:camid {font-weight:bold}
+
+</style>
+</head>
+
+
+
+
+<div class="container">
+	{{#if drugs}}
+	<div class="card card-body">
+		<br>
+		<br>
+		<br>
+		<h3 class="text-primary">Drug Information</h3>
+		{{#each drugs}}
+
+		<table>
+		
+	<tr>
+		<td>camid</td>
+		<td>{{camid}}</td>
+		
+		{{!-- <td>
+					<div class="accordion" id="storyAccordion">
+			<div class="card-header" id="headingOne">
+				<button class="btn btn-link" type="button" data-toggle="collapse"
+				data-target="#collapseOne{{id}}" aria-expanded="false"
+				aria-controls="collapseOne{{id}}" style="text-decoration: none;">
+				Story <i class="fas fa-chevron-down"></i>
+				</button>
+			</div>
+			<div id="collapseOne{{id}}" class="collapse" aria-labelledby="headingOne"
+				data-parent="#storyAccordion">
+				<div class="card-body">
+				{{refherb}}
+				</div>
+			</div>
+			</div>
+	  	</td> --}}
+		
+	</tr>
+	<tr>
+		<td>CAM</td>
+		<td>{{cam}}</td>
+	</tr>
+	<tr>
+		<td>acronym</td>
+		<td>{{acronym}}</td>
+	</tr>
+	<tr>
+		<td>comm_name</td>
+		<td>{{comm_name}}</td>
+	</tr>
+	<tr>
+		<td>sci_name</td>
+		<td>{{sci_name}}</td>
+	</tr>
+	<tr>
+		<td>pinyin</td>
+		<td>{{pinyin}}</td>
+	</tr>
+	<tr>
+		<td>main_const</td>
+		<td>{{main_const}}</td>
+	</tr>
+	<tr>
+		<td>other_const</td>
+		<td>{{other_const}}</td>
+	</tr>
+	<tr>
+		<td>four_nature</td>
+		<td>{{four_nature}}</td>
+	</tr>
+	<tr>
+		<td>hotcold</td>
+		<td>{{hotcold}}</td>
+	</tr>
+	<tr>
+		<td>five_flavor</td>
+		<td>{{five_flavor}}</td>
+	</tr>
+	<tr>
+		<td>nourish_property</td>
+		<td>{{nourish_property}}</td>
+	</tr>
+	<tr>
+		<td>CAindication</td>
+		<td>{{CAindication}}</td>
+	</tr>	
+	<tr>
+		<td>moaCAind</td>
+		<td>{{moaCAind}}</td>
+	</tr>	
+	<tr>
+		<td>otherindication</td>
+		<td>{{otherindication}}</td>
+	</tr>	
+	<tr>
+		<td>adr</td>
+		<td>{{adr}}</td>
+	</tr>	
+	<tr>
+		<td>proteinbinding</td>
+		<td>{{proteinbinding}}</td>
+	</tr>	
+	<tr>
+		<td>metabolism</td>
+		<td>{{metabolism}}</td>
+	</tr>	
+	<tr>
+		<td>elimination</td>
+		<td>{{elimination}}</td>
+	</tr>	
+	<tr>
+		<td>enz_substrate</td>
+		<td>{{enz_substrate}}</td>
+	</tr>	
+	<tr>
+		<td>enz_inducer</td>
+		<td>{{enz_inducer}}</td>
+	</tr>	
+	<tr>
+		<td>enz_inhibitor</td>
+		<td>{{enz_inhibitor}}</td>
+	</tr>	
+	<tr>
+		<td>camurl</td>
+		<td>{{camurl}}</td>
+	</tr>	
+	<tr>
+		<td>refherb</td>
+		<td>{{refherb}}</td>
+	</tr>	
+	<tr>
+		<td>refadr</td>
+		<td>{{crefadr}}</td>
+	</tr>	
+	<tr>
+		<td>camdataupdated</td>
+		<td>{{camdataupdated}}</td>
+	</tr>		
+	</table>
+		{{!-- <div class="card border-primary mb-2 w-100 mx-auto">
+			<div class="card-header">
+				<h5 class="card-title">{{camid}}</h5>
+			</div>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<p class="font-italic">CAM</p>
+						<p class="text-info">
+							{{cam}}
+						</p>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<p class="font-italic">Acronym</p>
+						<p class="text-info">
+							{{acronym}}
+						</p>
+					</div>					
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<p class="font-italic">Comm_name</p>
+						<p class="text-info">
+							{{comm_name}}
+						</p>
+					</div>					
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<p class="font-italic">Sci_name</p>
+						<p class="text-info">
+							{{sci_name}}
+						</p>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<p class="font-italic">Pinyin</p>
+						<p class="text-info">
+							{{pinyin}}
+						</p>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<p class="font-italic">Main Constituents</p>
+						<p class="text-info">
+							{{main_const}}
+						</p>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<p class="font-italic">Other Constituents</p>
+						<p class="text-info">
+							{{other_const}}
+						</p>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<p class="font-italic">Four_nature</p>
+						<p class="text-info">
+							{{four_nature}}
+						</p>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<p class="font-italic">hotcold</p>
+						<p class="text-info">
+							{{hotcold}}
+						</p>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<p class="font-italic">Five_flavour</p>
+						<p class="text-info">
+							{{sci_name}}
+						</p>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<p class="font-italic">Nourish_property</p>
+						<p class="text-info">
+							{{nourish_property}}
+						</p>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<p class="font-italic">CAindication</p>
+						<p class="text-info">
+							{{CAindication}}
+						</p>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<p class="font-italic">moaCAid</p>
+						<p class="text-info">
+							{{moaCAid}}
+						</p>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<p class="font-italic">otherindication</p>
+						<p class="text-info">
+							{{otherindication}}
+						</p>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<p class="font-italic">Adverse Drug Reaction</p>
+						<p class="text-info">
+							{{adr}}
+						</p>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<p class="font-italic">protein binding</p>
+						<p class="text-info">
+							{{proteinbinding}}
+						</p>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<p class="font-italic">Metabolism</p>
+						<p class="text-info">
+							{{metabolism}}
+						</p>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<p class="font-italic">Elimination</p>
+						<p class="text-info">
+							{{elimination}}
+						</p>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<p class="font-italic">Enz_substrate</p>
+						<p class="text-info">
+							{{enz_substrate}}
+						</p>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<p class="font-italic">Enz_inducer</p>
+						<p class="text-info">
+							{{enz_inducer}}
+						</p>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<p class="font-italic">Enz_inhibitor</p>
+						<p class="text-info">
+							{{enz_inhibitor}}
+						</p>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<p class="font-italic">camurl</p>
+						<p class="text-info">
+							{{camurl}}
+						</p>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<p class="font-italic">refherb</p>
+						<p class="text-info">
+							{{refherb}}
+						</p>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<p class="font-italic">refadr</p>
+						<p class="text-info">
+							{{refadr}}
+						</p>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<p class="font-italic">camdataupdated</p>
+						<p class="text-info">
+							{{camdataupdated}}
+						</p>
+					</div>
+
+										
+										
+				</div>
+			</div>
+
+
+		</div> --}}
+		{{/each}}
+	</div>
+
+</div>
+{{else}}
+<br>
+<br>
+<br>
+<h3>Search By CAM</h3>
+<br>
+<form class="form-inline mt-2 mt-md-0"id="search-form"method="post">
+<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"id="search-input"name="search">
+<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
+
+{{/if}}
+
+
+<script>
+	$('[data-toggle=confirmation]').confirmation({
+		rootSelector: '[data-toggle=confirmation]',
+	});
+</script>
+
